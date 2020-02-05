@@ -8,7 +8,7 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    @author = Author.authenticate_or_request_with_http_basic(author_params)
+    @author = Author.new(author_params)
     
     if @author.valid?
       #binding.pry
